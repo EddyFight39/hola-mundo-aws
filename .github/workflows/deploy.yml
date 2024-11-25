@@ -20,6 +20,6 @@ jobs:
 
       - name: Copy files to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.AWS_EC2_SSH_KEY }} ec2-user@3.85.119.100 "sudo chmod 777 /usr/share/nginx/html/index.html"
-          scp -o StrictHostKeyChecking=no -i ${{ secrets.AWS_EC2_SSH_KEY }} -r ./index.html ec2-user@3.85.119.100:/usr/share/nginx/html/index.html
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.AWS_EC2_SSH_KEY }} ec2-user@3.85.119.100 "sudo chmod 644 /usr/share/nginx/html/index.html"
+          chmod 600 ~/.ssh/aws_key.pem
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ./index.html ec2-user@3.85.119.100:/tmp/index.html
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ec2-user@3.85.119.100 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
