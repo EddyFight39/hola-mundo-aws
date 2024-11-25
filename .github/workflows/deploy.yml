@@ -20,5 +20,5 @@ jobs:
 
       - name: Copy files to EC2
         run: |
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ./index.html ec2-user@3.85.119.100:/tmp/
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ec2-user@3.85.119.100 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ./index.html ec2-user@107.21.218.122:/tmp/
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem ec2-user@107.21.218.122 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
