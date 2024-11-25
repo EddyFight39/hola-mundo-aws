@@ -20,4 +20,4 @@ jobs:
 
       - name: Copy files to EC2
         run: |
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/aws_key.pem -r ./index.html ec2-user@3.85.119.100:/usr/share/nginx/html/index.html
+          scp -o StrictHostKeyChecking=no -i ${{ secrets.AWS_EC2_SSH_KEY }} -r ./index.html ec2-user@3.85.119.100:/usr/share/nginx/html/index.html
