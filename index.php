@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>¡Hola Mundo de AWS 4.1!</h1>
-    <p>IP Privada de la Instancia: <?php echo $_SERVER['SERVER_ADDR']; ?></p>
+    <p>IP Privada de la Instancia: <?php echo gethostbyname(gethostname()); ?></p>
 </body>
 </html>
