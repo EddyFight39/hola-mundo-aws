@@ -26,7 +26,7 @@ $publicIP = getPublicIP();
 <body>
     <h1>¡Hola Mundo de AWS 4.1!</h1>
     <p>IP Privada de la Instancia: <?php echo gethostbyname(gethostname()); ?></p>
-    <p><span>Local IP:</span> <?= htmlspecialchars($localIP) ?></p>
+    <p><span>Local IP:</span> <?= getLocalIP() ?></p>
     <p><span>Public IP:</span> <?= htmlspecialchars($publicIP) ?></p>
 
 </body>

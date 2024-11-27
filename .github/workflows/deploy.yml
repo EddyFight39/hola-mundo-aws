@@ -28,3 +28,4 @@ jobs:
           scp -o StrictHostKeyChecking=no ./index.html ec2-user@52.44.2.121:/tmp/
           ssh -o StrictHostKeyChecking=no ec2-user@52.44.2.121 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
       
+          
