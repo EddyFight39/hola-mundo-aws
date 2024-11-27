@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>¡Hola Mundo de AWS 4.1!</h1>
-    <p>$(hostname -f)</p>
+    <p id="hostname">Cargando hostname...</p>
+    <script>
+        document.getElementById("hostname").innerText = window.location.hostname;
+    </script>
 </body>
 </html>
