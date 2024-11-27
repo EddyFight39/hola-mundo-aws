@@ -21,10 +21,10 @@ jobs:
       - name: Copy files to EC2 - Instance 1 (Prueba2AWS)
         run: |
           scp -o StrictHostKeyChecking=no ./index.php ec2-user@107.21.218.122:/tmp/
-          ssh -o StrictHostKeyChecking=no ec2-user@107.21.218.122 "sudo mv /tmp/index.php /usr/share/nginx/html/index.php && sudo systemctl restart nginx"
+          ssh -o StrictHostKeyChecking=no ec2-user@107.21.218.122 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
     
       - name: Copy files to EC2 - Instance 2 (ASWPrueba3)
         run: |
           scp -o StrictHostKeyChecking=no ./index.php ec2-user@52.44.2.121:/tmp/
-          ssh -o StrictHostKeyChecking=no ec2-user@52.44.2.121 "sudo mv /tmp/index.php /usr/share/nginx/html/index.php && sudo systemctl restart nginx"
+          ssh -o StrictHostKeyChecking=no ec2-user@52.44.2.121 "sudo mv /tmp/index.html /usr/share/nginx/html/index.html && sudo systemctl restart nginx"
       
