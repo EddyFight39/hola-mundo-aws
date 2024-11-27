@@ -7,9 +7,6 @@
 </head>
 <body>
     <h1>¡Hola Mundo de AWS 4.1!</h1>
-    <p id="hostname">Cargando hostname...</p>
-    <script>
-        document.getElementById("hostname").innerText = window.location.hostname;
-    </script>
+    <p>IP Privada de la Instancia: <?php echo $_SERVER['SERVER_ADDR']; ?></p>
 </body>
 </html>
