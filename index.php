@@ -1,3 +1,21 @@
+<?php
+// Función para obtener la IP local
+function getLocalIP() {
+    $localIP = getHostByName(getHostName());
+    return $localIP;
+}
+
+// Función para obtener la IP pública
+function getPublicIP() {
+    $publicIP = file_get_contents('http://checkip.amazonaws.com/');
+    return trim($publicIP); // Elimina espacios en blanco
+}
+
+$localIP = getLocalIP();
+$publicIP = getPublicIP();
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,5 +26,8 @@
 <body>
     <h1>¡Hola Mundo de AWS 4.1!</h1>
     <p>IP Privada de la Instancia: <?php echo gethostbyname(gethostname()); ?></p>
+    <p><span>Local IP:</span> <?= htmlspecialchars($localIP) ?></p>
+    <p><span>Public IP:</span> <?= htmlspecialchars($publicIP) ?></p>
+
 </body>
 </html>
